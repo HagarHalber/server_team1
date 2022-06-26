@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href={{ url_for('static', filename='css/tripal_styling.css') }}>
+    <script defer src={{ url_for('static', filename='js/markPage.js') }}></script>
+    <title>TriPal- Contact Us</title>
+</head>
+<body class= "contactBody">
+    <nav class="nav" id="nav_contactUs">
+        <ul class="nav-list">
+            <li class="list-item">
+                <a href=/MyProfile>My Profile</a>
+            </li>
+            <li class="list-item">
+                <a href=/MyMatches>My Matches</a>
+            </li>
+            <li class="list-item">
+                <a href="TripalContactUs_signIn.html">Contact Us</a>
+            </li>
+            <li class="list-item">
+                <a href=/log_out>Log Out</a>
+            </li>
+        </ul>
+    </nav>
+
+    <h1 id="Header_contactUs">Contact Us</h1>
+    
+   
+        <form action=/ContectUsSignin method="post" id="form_contactUs" onsubmit="confirm( 'Thank you for your inquiry, we will get back to you soon!' )">
+        <table  cellpadding="8" cellspacing="0">
+          
+        <label for="Comments">Your Message:</label>
+        </td> <td>
+        
+        <textarea  id="your_message" name="Comments" rows="7" cols="40" required></textarea>
+        <button name="skip_Submit" type="submit" id="submit_contactUs" >Submit</button>
+        </td> </tr>
+        </table>
+        </form>
+   
+</body>
+</html>

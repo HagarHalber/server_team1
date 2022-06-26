@@ -1,0 +1,60 @@
+body{
+    background-image: url(../media/background_createProfile.jpg);
+    background-repeat: no-repeat;
+    background-position-y: 70px;
+    background-size: cover;
+    font-family: fonttry; 
+    
+}
+
+.update_profile{
+    background-image: url(../media/update_profile.jpg);
+}
+.main{
+    padding: 30px;
+    background-color: rgba(255, 255, 255,0.5);
+    position: relative; top: 20px;
+    border-radius: 20px;
+ }
+
+ .form-group{
+     font-size: 20px;
+     color: black;
+ }
+
+.nav {
+    grid-area: Nav;
+    display: right; 
+    font-weight: bold;   
+    justify-content: space-around; 
+    width: 100%;
+	font-size: 20px;
+    text-align: right;
+    margin-right: 20px;
+
+}
+
+.nav-list{
+    display: inline-block;
+    padding: 7px;
+    position: relative;right:-35%
+
+}
+
+.nav a{
+    color: rgb(2, 2, 75);
+    font-size: larger;
+}
+
+ .nav a:hover{
+    color: rgb(36, 160, 209);
+}
+
+@font-face{
+    font-family: fonttry;
+    src: url(../media/ShadowsIntoLight-Regular.ttf);
+}
+
+.select_multiple{
+    font-size: smaller;
+}

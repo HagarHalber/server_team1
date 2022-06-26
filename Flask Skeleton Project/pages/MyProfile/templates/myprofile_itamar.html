@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TriPal - My Profile</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href={{ url_for('MyProfile.static', filename='profile3css.css') }}>
+    <script defer src={{ url_for('static', filename='js/myProfileJS.js') }}></script>
+</head>
+<body>
+<nav class="nav">
+    <ul class="nav-list">
+        <li class="list-item">
+            <a href=/MyProfile>My Profile</a>
+        </li>
+        <li class="list-item">
+            <a href=/MyMatches>My Matches</a>
+        </li>
+        <li class="list-item">
+            <a href=/ContectUsSignin>Contact Us</a>
+        </li>
+        <li class="list-item">
+            <a href=/log_out>Log Out</a>
+        </li>
+    </ul>
+</nav>
+{% if query_id %}
+    <div class="container">
+        <div class="main">
+            <div class="row">
+                <div class="col-md-4 ">
+                    <div class="card text-center sidebar">
+                        <div class="card-body">
+                            <img src="../../../static/media/itamar.jpg" class="rounded-circle" width="150">
+                            <div class="col-sm">
+                                <h3>Itamar Goldshmidet</h3>
+                                <a href="{{ query_id[0][16] }}">Facebook</a>
+                                <a href="{{ query_id[0][17] }}">Instagram</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <form action="/updateProfile" method="post">
+                        <div class="card">
+                            <h1 class="card-title">Personal Info</h1>
+
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <h5>Full Name</h5>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <p id="Full-Name" class="card-text">{{ query_id[0][4] }} </p>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <h5>Email</h5>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <p id="Email" class="card-text">{{ query_id[0][0] }}</p>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <h5>Phone</h5>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <p id="Phone-Number" class="card-text">{{ query_id[0][3] }}</p>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <h5>Destination</h5>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <p id="Destnation" class="card-text">{{ query_id[0][8] }}</p>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <h5>From</h5>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <p id="From" class="card-text">{{ query_id[0][9] }}</p>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <h5>To</h5>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <p id="To" class="card-text">{{ query_id[0][10] }}</p>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <h5>Hobbies</h5>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <p id="Hobbies">{{ query_id[0][13] }}</p>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <h5>Trip Vibe</h5>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <p id="Vibe">{{ query_id[0][14] }}</p>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <h5>Languages</h5>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <p id="Languages">{{ query_id[0][11] }}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <h5>About Me</h5>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <p id="About">{{ query_id[0][15] }}</p>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <button type="submit" class="btn btn-success">To update your profile click
+                                            here!!!
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% else %}
+    <div class="container">
+        <div class="main">
+            <div class="row">
+                <h1 style="color:red">User must login/signin first</h1>
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+</body>
+</html>

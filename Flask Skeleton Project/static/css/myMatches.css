@@ -1,0 +1,139 @@
+body{
+    background-image: url(../media/myMatchesBackgound.jpg);
+    background-repeat: no-repeat;
+    background-position-y: 70px;
+    background-size: cover;
+    font-family: fonttry; 
+    
+}
+
+.active {
+    border: 2px solid rgb(91, 184, 238);
+    border-radius: 15px;
+}
+
+.nav {
+    grid-area: Nav;
+    display: right; 
+    font-weight: bold;   
+    justify-content: space-around; 
+    width: 100%;
+	font-size: 20px;
+}
+
+
+.nav-list {
+    list-style-type: none;
+    text-align: right;
+    margin-right: 20px;
+
+}
+
+.nav-list .list-item{
+    display: inline-block;
+    padding: 7px;
+    position: relative;
+
+}
+
+.nav a{
+    color: rgb(2, 2, 75);
+    font-size: larger;
+    text-decoration: none;
+}
+
+ .nav a:hover{
+    color: rgb(36, 160, 209);
+}
+
+@font-face{
+    font-family: fonttry;
+    src: url(../media/ShadowsIntoLight-Regular.ttf);
+}
+
+.profile{
+    background-color:  rgba(224, 248, 250, 0.7);
+    color: darkblue;
+    float: left;
+    width: 25%;
+    border-radius: 10%;
+    margin: 3%;
+    text-align: center;
+    font-size: larger;
+    padding-bottom: 3%;
+    font-weight: bold;
+    margin-left: 5%;
+}
+
+.headings{
+    font-size: 40px;
+    margin-bottom: -3%;
+}
+
+#profile_container::after{
+  content: "";
+  clear: both;
+  display: table;
+  justify-content: center;
+}
+
+
+.profile a{
+    color: darkblue;
+}
+
+.profile a:hover{
+    color: white;
+}
+
+button {
+	border-radius: 20px;
+	border: 1px solid #d6e7f3;
+	background-color: #d6e7f3;
+    color: darkblue;
+    font-family: fonttry;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+    margin-top: 3%;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #c7e1e6;
+}
+
+.profilePic{
+    margin-top: 5%;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+}
+
+@media only screen and (max-width: 1000px){
+    .profilePic{
+        margin-top: 5%;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+    }
+
+    .headings{
+        font-size: 20px;
+        margin-bottom: -3%;
+        font-weight: bold;
+    }
+
+    .profile{
+        font-weight: lighter;    
+    }
+
+    button{
+        padding: 10px 30px;
+	    letter-spacing: 1px;
+    }
+
+}

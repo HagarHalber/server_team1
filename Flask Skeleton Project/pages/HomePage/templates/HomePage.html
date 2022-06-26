@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href={{ url_for('static', filename='css/tripal_styling.css') }}>
+    <script defer src={{ url_for('static', filename='js/markPage.js') }}></script>
+    <title>TriPal - Home Page</title>
+</head>
+<body id = "HomePage">
+    <nav class="nav">
+        <ul class="nav-list">
+            <li class="list-item">
+                <a href=/Home>Home</a>
+            </li>
+            <li class="list-item">
+                <a href=/About>About Us</a>
+            </li>
+            <li class="list-item">
+                <a href=/ContectUs>Contact Us</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="header_homePage">
+    <Header id="mainHeader_homePage">TriPal</Header>
+    <footer>Find the best partner <br> for your dream journey</footer>
+    </div>
+
+    <form method="get" action="/SignUp">
+    <button type="submit" class="start_your_journey" >Start Your Journey</button>
+    </form>
+
+
+</body> 
+</html>

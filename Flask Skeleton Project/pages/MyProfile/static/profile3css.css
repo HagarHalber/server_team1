@@ -1,0 +1,85 @@
+body{
+    background-image: url(../static/myProfilepic.jpg);
+    background-repeat: no-repeat;
+    background-position-y: 70px;
+    background-size: cover;
+    font-family: fonttry; 
+    
+}
+
+.main{
+    padding: 20px;
+ }
+
+
+.nav {
+    grid-area: Nav;
+    display: right; 
+    font-weight: bold;   
+    justify-content: space-around; 
+    width: 100%;
+	font-size: 20px;
+}
+
+
+.nav-list {
+    list-style-type: none;
+    text-align: right;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+.nav-list .list-item{
+    display: inline-block;
+    padding: 7px;
+    position: relative;right: -90%;
+
+}
+
+.nav a{
+    color: rgb(2, 2, 75);
+    font-size: larger;
+}
+
+ .nav a:hover{
+    color: rgb(36, 160, 209);
+}
+
+
+
+@font-face{
+    font-family: fonttry;
+    src: url(../static/ShadowsIntoLight-Regular.ttf);
+}
+
+.sidebar a{
+    margin-left: 10px;
+    display: block;
+    color: black;
+    padding-bottom: 10px;
+    font-size: 30px;
+    text-decoration: underline;
+    padding: 10px 10px;
+    
+}
+
+.card{
+    position: relative;
+    padding: 5%;
+    display: flex;
+    flex-direction: column; 
+    background-color: #cdf2f3b3;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+             0 10px 10px rgba(0,0,0,0.22);
+ }
+
+ h3, h5{
+     font-weight: bold;
+ }
+
+ .active {
+    border: 2px solid rgb(91, 184, 238);
+    border-radius: 15px;
+}
+
+
