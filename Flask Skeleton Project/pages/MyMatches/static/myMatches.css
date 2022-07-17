@@ -1,4 +1,4 @@
-body{
+body {
     background-image: url(../static/myMatchesBackgound.jpg);
     background-repeat: no-repeat;
     background-position-y: 70px;
@@ -14,7 +14,6 @@ body{
 
 .nav {
     grid-area: Nav;
-    display: right; 
     font-weight: bold;   
     justify-content: space-around; 
     width: 100%;
@@ -48,13 +47,12 @@ body{
 
 @font-face{
     font-family: fonttry;
-    src: url(../media/ShadowsIntoLight-Regular.ttf);
+    src: url(../static/ShadowsIntoLight-Regular.ttf);
 }
 
 .profile{
     background-color:  rgba(224, 248, 250, 0.7);
     color: darkblue;
-    float: left;
     width: 25%;
     border-radius: 10%;
     margin: 3%;
@@ -63,6 +61,7 @@ body{
     padding-bottom: 3%;
     font-weight: bold;
     margin-left: 5%;
+    justify-content: center;
 }
 
 .headings{
@@ -70,7 +69,11 @@ body{
     margin-bottom: -3%;
 }
 
-#profile_container::after{
+#profiles_container{
+    text-align: center;
+    justify-content: center;
+}
+#profiles_container::after{
   content: "";
   clear: both;
   display: table;

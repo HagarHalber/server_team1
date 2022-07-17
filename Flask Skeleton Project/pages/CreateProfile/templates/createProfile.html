@@ -18,7 +18,7 @@
 <div class="container col-md-6">
     <div class="main">
     <div class="row justify-content-center">
-    <form onsubmit="return DateCheck()" action=/createProfile method="post" >
+    <form onsubmit="return DateCheck()" action=/createProfile method="post">
     <div class="header">
             <h1>Create Your Profile</h1>
         {% if message %}
@@ -42,7 +42,8 @@
     </div>
     <div class="form-group col-md-4">
         <label  id="bigGroups" for="bigGroups" >First Time Abroad?</label>
-        <input type="checkbox" class="form-control" id="bigGroups" name="first_time" required >
+        <input type='hidden' value='0' name='first_time'>
+        <input type="checkbox" class="form-control" id="first_time" name="first_time">
     </div>
 </div>
     <div class="form-row">
@@ -296,7 +297,6 @@
                 <option value="Zambia">Zambia</option>
                 <option value="Zimbabwe">Zimbabwe</option>
              </select>
-             <p class ="select_multiple">*Press Ctrl and select multiple choices</p>
         </div>
         <div class="form-group col-md-4">
         <label id="Startdates" for="StartDates" >Trip Start Date:</label>
@@ -320,11 +320,10 @@
             <option value="french">French</option>
             <option value="mandarin">Mandarin</option>
         </select>
-        <p class ="select_multiple">*Press Ctrl and select multiple choices</p>
             </div>
             <div class="form-group col-md-8">
             <label for="photo" >Upload Your Profile Picture:</label><br>
-            <input type="file" class="form-control" id="myFile" name="filename"  accept="image/png, image/gif, image/jpeg" >
+            <input type="file" class="form-control" id="file" name="file"  accept="image/png, image/gif, image/jpeg" >
             </div>
     </div>
         <div class="form-row">
@@ -382,11 +381,10 @@
         </div>
         <div class="form-row">
             <div id="create_button">
-                <button class="form-control" type="submit"> Create Your Profile <br>
+                <button class="form-control" type="submit"/> Create Your Profile <br>
             </div>
         </div>
     </form>
-
 </div>
 </div>
 </div>

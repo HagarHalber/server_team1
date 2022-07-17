@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template, request, redirect, url_for, session
+from utilities.Classes.Users import User
 import mysql.connector
 
 # home blueprint definition
@@ -12,8 +13,15 @@ MyProfile = Blueprint('MyProfile', __name__, template_folder='templates', static
 def MyProfile_func():
     if session:
         email = session['user_email']
-        query_id = "select * from users where email='%s'" % email
-        query_result = dbManager.fetch(query_id)
-        print(query_result)
-        return render_template('myprofile_itamar.html', query_id=query_result)
+        user = User(email, None, None, None, None,
+                            None, None, None, None,
+                            None, None, None, None, None, None, None, None, None, None)
+        query_id = user.search_user()
+        print(query_id)
+        return render_template('myprofile_itamar.html', query_id=query_id)
     return render_template('myprofile_itamar.html')
+
+
+
+# def display_image(filename):
+#     return redirect(url_for('static', filename='uploads/' + filename), code=301)

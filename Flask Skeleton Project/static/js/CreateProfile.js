@@ -22,6 +22,31 @@ function DateCheck()
   if(StartDate!= '' && EndDate!= '' && sDate> eDate)
     {
     alert("Please ensure that the End Date is greater than or equal to the Start Date.");
+<%session.setAttribute("id","Imsession");%>
     return false;
     }
+}
+document.getElementById('submit').onclick = function() {
+  var selected = [];
+  for (var option of document.getElementById('hobbies').options) {
+    if (option.selected) {
+      selected.push(option.value);
+    }
+  }
+hobbies_String(selected);
+}
+
+
+function hobbies_String(selected){
+  var opt = "";
+  for (var i=0, iLen=selected.length; i<iLen; i++) {
+    if(i == selected.length){
+      opt+= selected[i];
+    }
+    else{
+      opt+= selected[i] + " ,";
+    }
+  }
+  const input= document.getElementById('string_hobbies');
+  input.innerHTML= opt
 }

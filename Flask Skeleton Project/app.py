@@ -7,6 +7,8 @@ app = Flask(__name__)
 app.config.from_pyfile('settings.py')
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=20)
 
+UPLOAD_FOLDER = 'static/uploads/'
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 @app.route('/session')
 def session_func():
@@ -50,6 +52,7 @@ app.register_blueprint(MyProfile)
 from pages.SignUp.SingUp import SignUp
 
 app.register_blueprint(SignUp)
+
 
 @app.route('/log_out')
 def logout_func():

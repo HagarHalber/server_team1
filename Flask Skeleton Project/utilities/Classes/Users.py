@@ -2,7 +2,6 @@ from datetime import datetime
 
 from utilities.db.db_manager import dbManager
 
-
 class User:
     def __init__(self, email, account_name, password, phone_number, first_name, last_name, Age, first_time, destination,
                  start_date, end_date, language, budget, hobbies, vibe, filename, about_me, facebook, instagram):
@@ -28,7 +27,7 @@ class User:
         self.instagram = instagram
 
     def add_user(self):
-        query = "INSERT INTO users(email, Account_name, password, phone) VALUES ('%s', '%s', '%s', %s)" % (
+        query = "INSERT INTO users(email, Account_name, password, phone) VALUES ('%s', '%s', '%s', '%s')" % (
             self.email, self.account_name, self.password, self.phone)
         query_result = dbManager.commit(query)
         print(query_result)
@@ -45,3 +44,9 @@ class User:
                  self.vibe, self.filename, self.facebook, self.instagram, self.about, self.email)
         query_result = dbManager.commit(query)
 
+    def getMatches(self):
+        user = self.search_user()
+        query = f"SELECT * from users where destination='%s' and start_date between '%s' and '%s' and email != '%s'" %\
+                (user[0][8], user[0][9], user[0][10], user[0][0])
+        query_result = dbManager.fetch(query)
+        return query_result

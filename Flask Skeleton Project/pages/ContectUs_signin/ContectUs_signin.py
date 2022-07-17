@@ -15,6 +15,6 @@ def ContectUsSignin_func():
         email = session['user_email']
         name = session['user_name']
         contact = request.form['Comments']
-        Contact = ContactUs_users(email, contact,name)
+        Contact = ContactUs_users(email, contact, name)
         Contact.add_contact()
     return render_template('TripalContactUs_signIn.html')

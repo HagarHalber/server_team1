@@ -25,30 +25,32 @@
             <h6>{{ message}}</h6>
             {% endif %}
     </div>
+    {% if user %}
     <div class="form-row">
         <div class="form-group col-md-6">
         <label  for="First_Name">First Name:</label>
-        <input type="text" class="form-control" id="First_Name" name="first_Name" required>
+        <input type="text" class="form-control" id="First_Name" name="first_Name" value="{{ user[0][4] }}">
         </div>
         <div class="form-group col-md-6">
         <label id="lastName" for="Last_Name" >Last Name:</label>
-        <input type="text" class="form-control" id="Last_Name" name="last_Name" required>
+        <input type="text" class="form-control" id="Last_Name" name="last_Name" value="{{ user[0][5] }}">
         </div>
     </div>
     <div class="form-row">
     <div class="form-group col-md-4">
         <label id="age" for="Age" >Your Age:</label>
-        <input type="number" class="form-control"  id="Age" name="Age" min="18" required>
+        <input type="number" class="form-control"  id="Age" name="Age" min="18" value="{{ user[0][6] }}">
     </div>
     <div class="form-group col-md-4">
         <label  id="bigGroups" for="bigGroups" >First Time Abroad?</label>
-        <input type="checkbox" class="form-control" id="bigGroups" name="first_time" required >
+        <input type='hidden' value='0' name='first_time'>
+        <input type="checkbox" class="form-control" id="first_time" name="first_time">
     </div>
 </div>
     <div class="form-row">
         <div class="form-group col-md-4">
             <label id="Startdates" for="StartDates" >Destination:</label>
-            <select name="destination" class="form-control" id="Countries" required>
+            <select name="destination" class="form-control" id="Countries" value="{{ user[0][8] }}" required>
                 <option value="Afganistan">Afghanistan</option>
                 <option value="Albania">Albania</option>
                 <option value="Algeria">Algeria</option>
@@ -296,21 +298,20 @@
                 <option value="Zambia">Zambia</option>
                 <option value="Zimbabwe">Zimbabwe</option>
              </select>
-             <p class ="select_multiple">*Press Ctrl and select multiple choices</p>
         </div>
         <div class="form-group col-md-4">
         <label id="Startdates" for="StartDates" >Trip Start Date:</label>
-        <input type="date" class="form-control" id="startDates" name="start_date" required>
+        <input type="date" class="form-control" id="startDates" name="start_date" value="{{ user[0][9] }}">
         </div>
         <div class="form-group col-md-4">
         <label id="enddates" for="endDates" >Trip End Date:</label>
-        <input type="date" class="form-control" id="endDates" name="end_date" required>
+        <input type="date" class="form-control" id="endDates" name="end_date" value="{{ user[0][10] }}">
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-4">
             <label for="languages">Spoken Language:</label>
-            <select name="language" class="form-control" id="language" >
+            <select name="language" class="form-control" id="language" value="{{ user[0][11] }}" required>
             <option value="english">English</option>
             <option value="hebrew">Hebrew</option>
             <option value="Spanish">Spanish</option>
@@ -320,22 +321,22 @@
             <option value="french">French</option>
             <option value="mandarin">Mandarin</option>
         </select>
-        <p class ="select_multiple">*Press Ctrl and select multiple choices</p>
             </div>
             <div class="form-group col-md-8">
             <label for="photo" >Upload Your Profile Picture:</label><br>
-            <input type="file" class="form-control" id="myFile" name="filename"  accept="image/png, image/gif, image/jpeg" >
+            <input type="file" class="form-control" id="myFile" name="filename"  accept="image/png, image/gif, image/jpeg" required>
             </div>
     </div>
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label id="budget" for="budget" >Your Budget Per Week in USD:</label>
-                <input type="number" class="form-control"  id="Budget" name="budget" min="0"> <p id="usDollar">
+                <input type="number" class="form-control"  id="Budget" name="budget" min="0" value="{{ user[0][12] }}"> <p id="usDollar">
             </div>
             </div>
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="hobbies">Hobbies:</label>
+                <input type='hidden' value='0' name='hobbies'>
                 <select name="hobbies" class="form-control" id="hobbies" multiple>
                     <option value="Hiking">Hiking</option>
                     <option value="Painting">Painting</option>
@@ -367,28 +368,28 @@
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="freeText" >About You:</label><br>
-                <textarea name="about_me" class="form-control" id="freeText" cols="50" rows="5"></textarea>
+                <textarea name="about_me" class="form-control" id="freeText" cols="50" rows="5" value="{{ user[0][15] }}"></textarea>
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="facebook_link" >Your Facebook Profile:</label>
-                <input type="url" pattern="https://www.facebook.com/.+" name="facebook" class="form-control"  id="Facebook" cols="30" rows="1"></textarea>
+                <input type="url" pattern="https://www.facebook.com/.+" name="facebook" class="form-control"  id="Facebook" cols="30" rows="1" value="{{ user[0][16] }}"></textarea>
             </div>
             <div class="form-group col-md-6">
                 <label for="instagram_link" >Your Instagram Profile:</label>
-                <input type="url" pattern="https://www.instagram.com/.+" name="instagram" class="form-control" id="Instagram" cols="29" rows="1"></textarea>
+                <input type="url" pattern="https://www.instagram.com/.+" name="instagram" class="form-control" id="Instagram" cols="29" rows="1" value="{{ user[0][17] }}"></textarea>
             </div>
         </div>
         <div class="form-row">
             <div id="create_button">
-                <button class="form-control" type="submit"> Create Your Profile <br>
+                <button class="form-control" type="submit"> Update Your Profile </button><br>
             </div>
         </div>
     </form>
-
 </div>
 </div>
+{% endif %}
 </div>
 </body>
 </html>

@@ -26,36 +26,23 @@
             </li>
         </ul>
     </nav>
-
+    {% if message %}
+    <h1 style="color: red">{{ message }}</h1>
+    {% endif %}
+{% if matches %}
     <div id="profiles_container">
-    <div class="profile">
-        <img src="../static/shira_profile.jpg" alt="" class="profilePic">
-        <p class="headings">Personal Info:</p>
-        <p>Name: Shira Yahav</p>
-        <p>Destination: Paris</p>
-        <p>From: 07/10/22 </p> 
-        <p>To: 15/10/2022</p> <br>
-        <button type="submit" onclick="window.location.href='myprofile_shira.html'">View Profile</button>
-    </div>
-    <div class="profile">
-        <img src="../static/morProfile2.jpg" alt="" class="profilePic">
-        <p class="headings">Personal Info:</p>
-        <p>Name: Mor Barzilay</p>
-        <p>Destination: Paris</p>
-        <p>From: 06/10/22 </p> 
-        <p>To: 15/10/2022</p><br>
-        <button onclick="onclick=window.location.href='myprofile_mor.html'">View Profile</button>
-    </div>
-    <div class="profile">
-        <img src="../static/ofirProfile.jpg" alt="" class="profilePic">
-        <p class="headings">Personal Info:</p>
-        <p>Name: Ofir Zairi</p>
-        <p>Destination: Paris</p>
-        <p>From: 10/10/22 </p> 
-        <p>To: 18/10/2022</p><br>
-        <button onclick="window.location.href='myprofile_ofir.html'">View Profile</button>
-    </div>
+        {% for i in range(0,length) %}
+            <div class="profile">
+                <img src="../static/myProfilepic.jpg" alt="" class="profilePic">
+                <p class="headings">Personal Info:</p>
+                <p>Name: {{ matches[i][4] }} {{ matches[i][5] }}</p>
+                <p>Destination: {{ matches[i][8] }}</p>
+                <p>From: {{ matches[i][9] }} </p>
+                <p>To: {{ matches[i][10] }}</p> <br>
+                <a href=/MyMatches/view_profile/{{ matches[i][0] }}> <button type="submit">View Profile</button></a>
+            </div>
+        {% endfor %}
 </div>
-    
+ {% endif %}
 </body>
 </html>
