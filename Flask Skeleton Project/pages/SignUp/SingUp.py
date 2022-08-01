@@ -43,6 +43,7 @@ def SignIn_func():
             if users[0][2] == password:
                 session['user_email'] = email
                 session['user_password'] = password
+                session['user_name'] = users[0][1]
                 return redirect('/MyProfile')
             else:
                 return render_template('SignUp.html', message='wrong password')

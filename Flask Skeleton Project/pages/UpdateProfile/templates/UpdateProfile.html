@@ -323,8 +323,10 @@
         </select>
             </div>
             <div class="form-group col-md-8">
-            <label for="photo" >Upload Your Profile Picture:</label><br>
-            <input type="file" class="form-control" id="myFile" name="filename"  accept="image/png, image/gif, image/jpeg" required>
+            <label for="photo" >Upload Your Facebook Profile Picture:</label><br>
+            <input type="url" id="file" name="file" class="form-control"  cols="30" rows="1" value="{{ user[0][18] }}">
+            <p>*Please press right click on your facebook profile picture
+             and press "Copy image address". Then paste the url here :)</p>
             </div>
     </div>
         <div class="form-row">
@@ -335,9 +337,8 @@
             </div>
         <div class="form-row">
             <div class="form-group col-md-6">
-                <label for="hobbies">Hobbies:</label>
-                <input type='hidden' value='0' name='hobbies'>
-                <select name="hobbies" class="form-control" id="hobbies" multiple>
+                <label for="hobbies">Choose your main hobby:</label>
+                <select name="hobbies" class="form-control" id="hobbies" required>
                     <option value="Hiking">Hiking</option>
                     <option value="Painting">Painting</option>
                     <option value="Sports"> Doing Sports</option>
@@ -347,11 +348,10 @@
                     <option value="Cooking">Cooking</option>
                     <option value="Yoga">Yoga</option>
                 </select>
-                <p class ="select_multiple">*Press Ctrl and select multiple choices</p>
             </div>
             <div class="form-group col-md-6">
-                <label for="Vibes">My Vibe:</label>
-                <select name="vibe" class="form-control"  id="vibe" multiple>
+                <label for="Vibes">Choose your main vibe:</label>
+                <select name="vibe" class="form-control"  id="vibe">
                     <option value="Extreme">Extreme</option>
                     <option value="Relaxed">Relaxed</option>
                     <option value="Adventurous"> Adventurous</option>
@@ -362,7 +362,6 @@
                     <option value="shopping">Shopping</option>
                     <option value="chilling">Chilling</option>
                 </select>
-                <p class ="select_multiple">*Press Ctrl and select multiple choices</p>
             </div>
         </div>
         <div class="form-row">

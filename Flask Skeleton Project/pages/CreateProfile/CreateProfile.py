@@ -3,7 +3,7 @@ import os
 from flask import Blueprint, render_template, request, redirect, url_for, session, current_app, app
 from utilities.Classes.Users import User
 from utilities.db.db_manager import dbManager
-from werkzeug.utils import secure_filename
+
 
 createProfile = Blueprint('createProfile', __name__,
                           static_folder='static',
@@ -30,7 +30,6 @@ def createProfile_func():
                 hobbies = request.form['hobbies']
                 vibe = request.form['vibe']
                 url = request.form['file']
-                # upload_image(url)
                 about = request.form['about_me']
                 facebook = request.form['facebook']
                 instagram = request.form['instagram']
@@ -48,15 +47,3 @@ def createProfile_func():
             else:
                 return render_template('createProfile.html', message='User must login/signin first')
     return render_template('createProfile.html')
-
-
-# class Upload(dbManager.Model):
-#     id = dbManager.Column(dbManager.Intger, primary_key=True)
-#     filename = dbManager.Column(dbManager.String(50))
-#     data = dbManager.Column(dbManager.LargeBinary)
-
-
-
-# def upload_image(file):
-#     filename = secure_filename(file.filename)
-#     file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))

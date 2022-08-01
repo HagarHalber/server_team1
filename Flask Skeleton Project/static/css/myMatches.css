@@ -6,7 +6,6 @@ body{
     font-family: fonttry; 
     
 }
-
 .active {
     border: 2px solid rgb(91, 184, 238);
     border-radius: 15px;
@@ -14,11 +13,12 @@ body{
 
 .nav {
     grid-area: Nav;
-    display: right; 
-    font-weight: bold;   
-    justify-content: space-around; 
+    text-align: right;
+    font-weight: bold;
+    justify-content: space-around;
     width: 100%;
 	font-size: 20px;
+    text-decoration: none;
 }
 
 
@@ -26,14 +26,11 @@ body{
     list-style-type: none;
     text-align: right;
     margin-right: 20px;
-
 }
 
 .nav-list .list-item{
     display: inline-block;
     padding: 7px;
-    position: relative;
-
 }
 
 .nav a{

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href={{ url_for('static', filename='css/myMatches.css') }}>
     <title>Tripal - My Matches</title>
-    <script defer src={{ url_for('MyMatches.static', filename='myMatches.css') }}></script>
+    <script defer src={{ url_for('static', filename='js/markPage.js') }}></script>
 </head>
 <body>
 
@@ -33,7 +33,7 @@
     <div id="profiles_container">
         {% for i in range(0,length) %}
             <div class="profile">
-                <img src="../static/myProfilepic.jpg" alt="" class="profilePic">
+                <img src="{{ matches[i][18] }}" alt="" class="profilePic">
                 <p class="headings">Personal Info:</p>
                 <p>Name: {{ matches[i][4] }} {{ matches[i][5] }}</p>
                 <p>Destination: {{ matches[i][8] }}</p>

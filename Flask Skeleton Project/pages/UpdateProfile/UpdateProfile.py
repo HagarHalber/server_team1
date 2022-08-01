@@ -29,7 +29,7 @@ def updateProfile_func():
             budget = request.form['budget']
             hobbies = request.form['hobbies']
             vibe = request.form['vibe']
-            url = request.form['filename']
+            url = request.form['file']
             about = request.form['about_me']
             facebook = request.form['facebook']
             instagram = request.form['instagram']

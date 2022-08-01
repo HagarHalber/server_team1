@@ -1,6 +1,9 @@
-const activePge = window.location.href;
+
 const editButton = document.getElementById('edit');
 const saveButton = document.getElementById('save');
+
+//responsive nav bar
+const activePge = window.location.href;
 console.log(activePge);
 const navList = document.querySelectorAll('nav a').
  forEach(link => {
@@ -10,7 +13,7 @@ const navList = document.querySelectorAll('nav a').
     }
 });
 
-
+//dates validation
 var today = new Date();
 var dd = today.getDate();
 var mm = today.getMonth()+1; //January is 0 so need to add 1 to make it 1!
@@ -60,6 +63,7 @@ editButton.addEventListener('click', () => {
     about.style.backgroundColor = "#edf3f3b3";
 });
 
+//alerts when user doesn't fill in all fields
 saveButton.addEventListener('click', () => {
   var pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
     var re = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;

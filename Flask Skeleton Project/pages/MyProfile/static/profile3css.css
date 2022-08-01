@@ -14,7 +14,7 @@ body{
 
 .nav {
     grid-area: Nav;
-    display: right; 
+    display: right;
     font-weight: bold;   
     justify-content: space-around; 
     width: 100%;
@@ -43,9 +43,13 @@ body{
 
  .nav a:hover{
     color: rgb(36, 160, 209);
+     text-decoration: none;
 }
 
-
+.active {
+    border: 2px solid rgb(91, 184, 238);
+    border-radius: 15px;
+}
 
 @font-face{
     font-family: fonttry;
@@ -76,10 +80,5 @@ body{
  h3, h5{
      font-weight: bold;
  }
-
- .active {
-    border: 2px solid rgb(91, 184, 238);
-    border-radius: 15px;
-}
 
 

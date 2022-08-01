@@ -1,0 +1,8 @@
+body{
+    font-family: fonttry;
+}
+
+@font-face{
+    font-family: fonttry;
+    src: url(../media/ShadowsIntoLight-Regular.ttf);
+}

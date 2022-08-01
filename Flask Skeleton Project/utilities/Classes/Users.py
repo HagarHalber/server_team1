@@ -50,3 +50,8 @@ class User:
                 (user[0][8], user[0][9], user[0][10], user[0][0])
         query_result = dbManager.fetch(query)
         return query_result
+
+    def delete_user(self):
+        user = self.search_user()
+        query = f"DELETE FROM users WHERE email='%s'" % (user[0][0])
+        dbManager.commit(query)

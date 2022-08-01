@@ -22,6 +22,16 @@ def MyProfile_func():
     return render_template('myprofile_itamar.html')
 
 
-
-# def display_image(filename):
-#     return redirect(url_for('static', filename='uploads/' + filename), code=301)
+@MyProfile.route('/deleteProfile', methods=['GET', 'POST'])
+def Delete_func():
+    if session:
+        email = session['user_email']
+        user = User(email, None, None, None, None,
+                            None, None, None, None,
+                            None, None, None, None, None, None, None, None, None, None)
+        query_id = user.search_user()
+        print(query_id)
+        user.delete_user()
+        session['logedin'] = False
+        return redirect('/Home')
+    return render_template('myprofile_itamar.html')

@@ -34,8 +34,7 @@
                 <div class="col-md-4 ">
                     <div class="card text-center sidebar">
                         <div class="card-body">
-                            <img src="../static/myProfilepic.jpg" class="rounded-circle" width="150">
-{#                            {{ url_for('display_image', filename=query_id[0][19]) }}#}
+                            <img src="{{ query_id[0][18] }}" class="rounded-circle" width="150">
                             <div class="col-sm">
                                 <h3>{{ query_id[0][4] }} {{ query_id[0][5] }}</h3>
                                 <a href="{{ query_id[0][16] }}">Facebook</a>
@@ -144,6 +143,9 @@
                                         <button type="submit" class="btn btn-success">To update your profile click
                                             here!!!
                                         </button>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <button type="submit" formaction="/MyProfile/deleteProfile" class="btn btn-success">Delete Profile</button>
                                     </div>
                                 </div>
                             </div>
