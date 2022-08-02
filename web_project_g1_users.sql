@@ -1,3 +1,32 @@
+-- auto-generated definition
+create table users
+(
+    email        varchar(150)   not null
+        primary key,
+    Account_name varchar(50)    not null,
+    password     varchar(8)     not null,
+    phone        decimal        not null,
+    first_name   varchar(50)    null,
+    last_name    varchar(50)    null,
+    Age          int            null,
+    first_time   varchar(10)    null,
+    destination  varchar(50)    null,
+    start_date   date           null,
+    end_date     date           null,
+    language     varchar(50)    null,
+    budget       int            null,
+    hobbies      varchar(50)    null,
+    vibe         varchar(50)    null,
+    about_me     varchar(200)   null,
+    facebook     varchar(100)   null,
+    instagram    varchar(100)   null,
+    URL_pic      varchar(10000) null,
+    constraint Users_email_uindex
+        unique (email)
+);
+
+
+
 INSERT INTO `web-project-g1`.users (email, Account_name, password, phone, first_name, last_name, Age, first_time, destination, start_date, end_date, language, budget, hobbies, vibe, about_me, facebook, instagram, URL_pic) VALUES ('gimel@gmail.com', 'yehuda', 'yehuda21', 1234567890, 'yehuda', 'levi', 20, 'False', 'Antigua & Barbuda', '2022-07-27', '2022-08-31', 'english', 20000, 'Sports', 'Adventurous', 'I love new adventures and extreme', '', '', 'data:image/jpeg;base64');
 INSERT INTO `web-project-g1`.users (email, Account_name, password, phone, first_name, last_name, Age, first_time, destination, start_date, end_date, language, budget, hobbies, vibe, about_me, facebook, instagram, URL_pic) VALUES ('haim@gmail.com', 'haim', 'haim2121', 2093624273, 'haim', 'moshe', 34, 'False', 'Afganistan', '2022-07-31', '2022-08-25', 'english', 100000, 'Sports', 'Relaxed', 'Looking for  relaxed vacation', '', '', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCbb6SlwoHuHygFPoUF9NyZqoE9OxYN-D4vQ&usqp=CAU');
 INSERT INTO `web-project-g1`.users (email, Account_name, password, phone, first_name, last_name, Age, first_time, destination, start_date, end_date, language, budget, hobbies, vibe, about_me, facebook, instagram, URL_pic) VALUES ('mommy@gmail.com', 'noam', 'noam2121', 544210439, 'noam', 'ganzi', 50, 'False', 'Afganistan', '2022-07-31', '2022-08-24', 'english', 30000, 'Hiking', 'Extreme', '', '', '', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO2vBQ1vOla9pPM6M0ZsYZb7OckCS21cgN_Q&usqp=CAU');
