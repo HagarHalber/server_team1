@@ -46,10 +46,6 @@ body{
      text-decoration: none;
 }
 
-.active {
-    border: 2px solid rgb(91, 184, 238);
-    border-radius: 15px;
-}
 
 @font-face{
     font-family: fonttry;

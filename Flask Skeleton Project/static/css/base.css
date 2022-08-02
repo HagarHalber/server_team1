@@ -15,6 +15,3 @@ a[href]:visited {
     color: var(--visited-link-color);
 }
 
-a[href]:active {
-    color: var(--active-link-color);
-}

@@ -30,11 +30,6 @@ body{
 	font-family: fonttry;
 }
 
-.active {
-    border: 2px solid rgb(91, 184, 238);
-    border-radius: 15px;
-}
-
 .nav {
     grid-area: Nav;
     display: right; 
